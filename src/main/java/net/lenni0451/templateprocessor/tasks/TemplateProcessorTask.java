@@ -1,14 +1,14 @@
-package net.lenni0451.tempalteprocessor.tasks;
+package net.lenni0451.templateprocessor.tasks;
 
 import com.google.gson.*;
 import com.google.gson.stream.JsonReader;
 import lombok.extern.slf4j.Slf4j;
-import net.lenni0451.tempalteprocessor.OutputCleaner;
-import net.lenni0451.tempalteprocessor.helper.CapitalizeHelper;
-import net.lenni0451.tempalteprocessor.helper.LowerCaseHelper;
-import net.lenni0451.tempalteprocessor.helper.UpperCaseHelper;
-import net.lenni0451.tempalteprocessor.helper.VarHelper;
-import net.lenni0451.tempalteprocessor.model.TemplateConfig;
+import net.lenni0451.templateprocessor.OutputCleaner;
+import net.lenni0451.templateprocessor.helper.CapitalizeHelper;
+import net.lenni0451.templateprocessor.helper.LowerCaseHelper;
+import net.lenni0451.templateprocessor.helper.UpperCaseHelper;
+import net.lenni0451.templateprocessor.helper.VarHelper;
+import net.lenni0451.templateprocessor.model.TemplateConfig;
 import org.gradle.api.DefaultTask;
 import org.gradle.api.file.DirectoryProperty;
 import org.gradle.api.tasks.InputFiles;

@@ -1,6 +1,6 @@
-package net.lenni0451.tempalteprocessor.helper;
+package net.lenni0451.templateprocessor.helper;
 
-import net.lenni0451.tempalteprocessor.OutputCleaner;
+import net.lenni0451.templateprocessor.OutputCleaner;
 import org.trimou.handlebars.AbstractHelper;
 import org.trimou.handlebars.Options;
 

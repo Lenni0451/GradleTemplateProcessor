@@ -1,4 +1,4 @@
-package net.lenni0451.tempalteprocessor;
+package net.lenni0451.templateprocessor;
 
 /**
  * This class is used to remove unwanted placeholders from the output of the template processor.

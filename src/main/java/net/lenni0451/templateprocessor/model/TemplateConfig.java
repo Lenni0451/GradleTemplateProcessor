@@ -1,4 +1,4 @@
-package net.lenni0451.tempalteprocessor.model;
+package net.lenni0451.templateprocessor.model;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;

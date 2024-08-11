@@ -21,7 +21,7 @@ gradlePlugin {
     plugins {
         methodinliner {
             id = "net.lenni0451.template-processor"
-            implementationClass = "net.lenni0451.tempalteprocessor.TemplateProcessorPlugin"
+            implementationClass = "net.lenni0451.templateprocessor.TemplateProcessorPlugin"
             displayName = project.maven_name ?: rootProject.maven_name
             description = rootProject.maven_description
         }

@@ -1,7 +1,7 @@
-package net.lenni0451.tempalteprocessor;
+package net.lenni0451.templateprocessor;
 
-import net.lenni0451.tempalteprocessor.extensions.TemplateProcessorExtension;
-import net.lenni0451.tempalteprocessor.tasks.TemplateProcessorTask;
+import net.lenni0451.templateprocessor.extensions.TemplateProcessorExtension;
+import net.lenni0451.templateprocessor.tasks.TemplateProcessorTask;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import org.gradle.api.tasks.SourceSet;

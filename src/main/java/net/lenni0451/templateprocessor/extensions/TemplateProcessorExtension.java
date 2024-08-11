@@ -1,4 +1,4 @@
-package net.lenni0451.tempalteprocessor.extensions;
+package net.lenni0451.templateprocessor.extensions;
 
 import lombok.Getter;
 import org.gradle.api.Project;

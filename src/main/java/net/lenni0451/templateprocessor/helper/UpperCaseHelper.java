@@ -1,4 +1,4 @@
-package net.lenni0451.tempalteprocessor.helper;
+package net.lenni0451.templateprocessor.helper;
 
 import org.trimou.handlebars.AbstractHelper;
 import org.trimou.handlebars.Options;
