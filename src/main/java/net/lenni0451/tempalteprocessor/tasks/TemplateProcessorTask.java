@@ -30,7 +30,7 @@ import java.util.*;
 @Slf4j
 public abstract class TemplateProcessorTask extends DefaultTask {
 
-    private final Gson GSON = new Gson();
+    private final Gson gson = new Gson();
 
     @InputFiles
     public abstract DirectoryProperty getTemplateDir();
@@ -104,7 +104,7 @@ public abstract class TemplateProcessorTask extends DefaultTask {
         if (!file.isFile()) throw new IllegalStateException("The template file '" + file.getName() + "' is not a file");
 
         try (JsonReader reader = new JsonReader(new FileReader(file))) {
-            TemplateConfig templateConfig = GSON.fromJson(reader, TemplateConfig.class);
+            TemplateConfig templateConfig = this.gson.fromJson(reader, TemplateConfig.class);
             if (templateConfig == null) throw new IllegalStateException("The template file '" + file.getName() + "' could not be parsed");
 
             if (templateConfig.parent != null) {
