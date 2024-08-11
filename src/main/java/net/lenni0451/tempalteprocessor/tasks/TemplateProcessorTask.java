@@ -40,7 +40,6 @@ public abstract class TemplateProcessorTask extends DefaultTask {
 
     public void initSourceSets(final Set<SourceSet> sourceSets) {
         if (this.getTemplateDir().get().getAsFile().exists()) {
-//            this.getOutputDir().get().getAsFile().mkdirs(); //Create the output directory if it does not exist
             for (SourceSet sourceSet : sourceSets) {
                 //Add the output directory to all required source sets
                 sourceSet.getJava().srcDir(this.getOutputDir().get());
