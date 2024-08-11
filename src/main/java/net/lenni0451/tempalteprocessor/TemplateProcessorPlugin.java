@@ -7,6 +7,8 @@ import org.gradle.api.Project;
 import org.gradle.api.tasks.SourceSet;
 import org.gradle.api.tasks.SourceSetContainer;
 
+import java.util.Optional;
+
 public class TemplateProcessorPlugin implements Plugin<Project> {
 
     private static final String PROCESS_TEMPLATES_TASK_NAME = "processTemplates";
@@ -23,8 +25,8 @@ public class TemplateProcessorPlugin implements Plugin<Project> {
 
         target.afterEvaluate(project -> {
             for (SourceSet sourceSet : project.getExtensions().getByType(SourceSetContainer.class)) {
-                project.getTasks().getByName(sourceSet.getCompileJavaTaskName()).dependsOn(PROCESS_TEMPLATES_TASK_NAME);
-                project.getTasks().getByName(sourceSet.getSourcesJarTaskName()).dependsOn(PROCESS_TEMPLATES_TASK_NAME);
+                Optional.ofNullable(project.getTasks().findByName(sourceSet.getCompileJavaTaskName())).ifPresent(task -> task.dependsOn(PROCESS_TEMPLATES_TASK_NAME));
+                Optional.ofNullable(project.getTasks().findByName(sourceSet.getSourcesJarTaskName())).ifPresent(task -> task.dependsOn(PROCESS_TEMPLATES_TASK_NAME));
             }
         });
     }
