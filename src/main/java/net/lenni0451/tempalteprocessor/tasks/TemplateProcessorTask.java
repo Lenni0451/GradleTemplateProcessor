@@ -1,9 +1,6 @@
 package net.lenni0451.tempalteprocessor.tasks;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonPrimitive;
+import com.google.gson.*;
 import com.google.gson.stream.JsonReader;
 import lombok.extern.slf4j.Slf4j;
 import net.lenni0451.tempalteprocessor.OutputCleaner;
@@ -129,6 +126,11 @@ public abstract class TemplateProcessorTask extends DefaultTask {
     private JsonElement merge(final JsonElement variant, final JsonElement variables) {
         if (variant == null && variables == null) return new JsonObject();
         if (variables == null) return variant;
+
+        if (variant instanceof JsonObject && ((JsonObject) variant).isEmpty()) return variables;
+        if (variant instanceof JsonArray && ((JsonArray) variant).isEmpty()) return variables;
+        if (variables instanceof JsonObject && ((JsonObject) variables).isEmpty()) return variant;
+        if (variables instanceof JsonArray && ((JsonArray) variables).isEmpty()) return variant;
 
         if (variant instanceof JsonObject && variables instanceof JsonObject) {
             JsonObject merged = new JsonObject();
