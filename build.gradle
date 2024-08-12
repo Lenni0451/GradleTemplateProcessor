@@ -16,14 +16,15 @@ base {
 }
 
 gradlePlugin {
-    website = "github_repo" + rootProject.github_repo
-    vcsUrl = "github_repo" + rootProject.github_repo
+    website = "https://github.com/" + rootProject.github_repo
+    vcsUrl = "https://github.com/" + rootProject.github_repo
     plugins {
-        methodinliner {
+        templateprocessor {
             id = "net.lenni0451.template-processor"
             implementationClass = "net.lenni0451.templateprocessor.TemplateProcessorPlugin"
             displayName = project.maven_name ?: rootProject.maven_name
             description = rootProject.maven_description
+            tags.addAll("template processor", "template", "mustache")
         }
     }
 }
