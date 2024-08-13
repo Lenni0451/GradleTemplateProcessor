@@ -1,5 +1,5 @@
 # GradleTemplateProcessor
-A template processor for gradle.\
+A mustache template processor gradle plugin.\
 It is using the trimou template engine and json as the data source.
 
 For a practical example, you can take a look at my [commons library](https://github.com/Lenni0451/commons/tree/main/commons-functional/src/main/templates).
