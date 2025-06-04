@@ -30,7 +30,7 @@ import java.util.*;
 @Slf4j
 public abstract class TemplateProcessorTask extends DefaultTask {
 
-    private final Gson gson = new Gson();
+    private static final Gson GSON = new Gson();
 
     @InputFiles
     public abstract DirectoryProperty getTemplateDir();
@@ -104,7 +104,7 @@ public abstract class TemplateProcessorTask extends DefaultTask {
         if (!file.isFile()) throw new IllegalStateException("The template file '" + file.getName() + "' is not a file");
 
         try (JsonReader reader = new JsonReader(new FileReader(file))) {
-            TemplateConfig templateConfig = this.gson.fromJson(reader, TemplateConfig.class);
+            TemplateConfig templateConfig = this.GSON.fromJson(reader, TemplateConfig.class);
             if (templateConfig == null) throw new IllegalStateException("The template file '" + file.getName() + "' could not be parsed");
 
             if (templateConfig.parent != null) {
@@ -126,10 +126,10 @@ public abstract class TemplateProcessorTask extends DefaultTask {
         if (variant == null && variables == null) return new JsonObject();
         if (variables == null) return variant;
 
-        if (variant instanceof JsonObject && ((JsonObject) variant).isEmpty()) return variables;
-        if (variant instanceof JsonArray && ((JsonArray) variant).isEmpty()) return variables;
-        if (variables instanceof JsonObject && ((JsonObject) variables).isEmpty()) return variant;
-        if (variables instanceof JsonArray && ((JsonArray) variables).isEmpty()) return variant;
+        if (variant instanceof JsonObject && ((JsonObject) variant).size() == 0) return variables;
+        if (variant instanceof JsonArray && ((JsonArray) variant).size() == 0) return variables;
+        if (variables instanceof JsonObject && ((JsonObject) variables).size() == 0) return variant;
+        if (variables instanceof JsonArray && ((JsonArray) variables).size() == 0) return variant;
 
         if (variant instanceof JsonObject && variables instanceof JsonObject) {
             JsonObject merged = new JsonObject();

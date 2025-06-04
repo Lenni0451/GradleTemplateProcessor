@@ -5,7 +5,6 @@ import org.gradle.api.Project;
 import org.gradle.api.file.DirectoryProperty;
 import org.gradle.api.tasks.InputDirectory;
 import org.gradle.api.tasks.Internal;
-import org.gradle.api.tasks.OutputDirectory;
 import org.gradle.api.tasks.SourceSet;
 
 import java.util.HashSet;
@@ -34,7 +33,7 @@ public abstract class TemplateProcessorExtension {
     @InputDirectory
     public abstract DirectoryProperty getTemplateDir();
 
-    @OutputDirectory
+    @InputDirectory
     public abstract DirectoryProperty getOutputDir();
 
 }

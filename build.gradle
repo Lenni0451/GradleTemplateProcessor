@@ -41,7 +41,6 @@ dependencies {
 
     api "org.trimou:trimou-core:2.5.1.Final"
     api "org.trimou:trimou-extension-gson:2.5.1.Final"
-    api "com.google.code.gson:gson:2.13.1"
 }
 
 sourceSets {
