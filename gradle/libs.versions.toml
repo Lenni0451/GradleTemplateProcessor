@@ -4,7 +4,7 @@ trimou = "2.5.1.Final"
 [libraries]
 findbugs = { module = "com.google.code.findbugs:jsr305", version = "3.0.2" }
 jetbrainsAnnotations = { module = "org.jetbrains:annotations", version = "26.0.2-1" }
-lombok = { module = "org.projectlombok:lombok", version = "1.18.38" }
+lombok = { module = "org.projectlombok:lombok", version = "1.18.40" }
 
 trimou-core = { module = "org.trimou:trimou-core", version.ref = "trimou" }
 trimou-extension-gson = { module = "org.trimou:trimou-extension-gson", version.ref = "trimou" }
