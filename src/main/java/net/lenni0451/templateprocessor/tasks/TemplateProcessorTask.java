@@ -11,10 +11,7 @@ import net.lenni0451.templateprocessor.helper.VarHelper;
 import net.lenni0451.templateprocessor.model.TemplateConfig;
 import org.gradle.api.DefaultTask;
 import org.gradle.api.file.DirectoryProperty;
-import org.gradle.api.tasks.InputFiles;
-import org.gradle.api.tasks.OutputDirectory;
-import org.gradle.api.tasks.SourceSet;
-import org.gradle.api.tasks.TaskAction;
+import org.gradle.api.tasks.*;
 import org.trimou.Mustache;
 import org.trimou.engine.MustacheEngine;
 import org.trimou.engine.MustacheEngineBuilder;
@@ -28,6 +25,7 @@ import java.io.*;
 import java.util.*;
 
 @Slf4j
+@CacheableTask
 public abstract class TemplateProcessorTask extends DefaultTask {
 
     private static final Gson GSON = new Gson();
