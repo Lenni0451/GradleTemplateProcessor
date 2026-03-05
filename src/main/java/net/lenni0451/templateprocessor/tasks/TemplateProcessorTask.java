@@ -31,6 +31,7 @@ public abstract class TemplateProcessorTask extends DefaultTask {
     private static final Gson GSON = new Gson();
 
     @InputFiles
+    @PathSensitive(PathSensitivity.RELATIVE)
     public abstract DirectoryProperty getTemplateDir();
 
     @OutputDirectory
